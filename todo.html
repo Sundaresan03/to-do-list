@@ -1,0 +1,43 @@
+<style>
+div{
+  background-color: sandybrown;
+}
+h1{
+    margin-left: 40%;
+    
+    color: blue;
+    
+}
+  #input{
+    margin-left: 40%;
+
+  }
+  .add{
+    border-radius: 10%;
+    background-color: aqua;
+  }
+</style>
+<div>
+<h1>TODO LIST</h1>
+<input id="input">
+<button class="add" onclick="Add()">Add</button>
+
+<ul id="list">
+    <li>Hello
+    <button class="delete" onclick="del(event)">Delete</button></li>
+</ul>
+</div>
+<script>
+  var ul=document.getElementById("list")
+  var input=document.getElementById("input")
+  function Add()
+  {
+    var listItem=document.createElement("li")
+    listItem.innerHTML=input.value +"<button onclick='del(event)'>Delete</button>"
+    ul.append(listItem)
+  }
+  function del()
+  {
+    event.target.parentElement.remove()
+  }
+</script>
